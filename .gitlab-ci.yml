@@ -1,2 +1,2 @@
 env:
-  script: env | xxx
+  script: env | grep xxx

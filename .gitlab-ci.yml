@@ -1,25 +1,2 @@
-stages:
-  - build
-  - test
-  - deploy
-
-build:
-  stage: build
-  script: echo Build
-  except:
-    variables:
-      - $SKIP_STAGE_build == "1" && $SKIP_BRANCH == $CI_COMMIT_REF_NAME
-
-test:
-  stage: test
-  script: echo Test
-  except:
-    variables:
-      - $SKIP_STAGE_test == "1" && $SKIP_BRANCH == $CI_COMMIT_REF_NAME
-
-deploy:
-  stage: deploy
-  script: echo Deploy
-  except:
-    variables:
-      - $SKIP_STAGE_deploy == "1" && $SKIP_BRANCH == $CI_COMMIT_REF_NAME
+env:
+  script: env

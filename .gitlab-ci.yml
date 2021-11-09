@@ -6,8 +6,8 @@ stages:
 
 build:
   stage: build
-  script: echo Run build ...
-  # script: echo Run build ... && false
+  #script: echo Run build ...
+  script: echo Run build ... && false
 
 test:
   stage: test

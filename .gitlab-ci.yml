@@ -1,10 +1,25 @@
-# .gitlab-ci.yml
+stages:
+  - a
+  - b
+  - c
+  - d
 
-test:
+a:
+  stage: a
+  script: echo a
   when: manual
-  script: echo test ... && false
 
-test2:
+b:
+  stage: b
+  script: echo b
   when: manual
-  script: echo test ... && false
-  allow_failure: false
+  
+c:
+  stage: c
+  script: echo c
+  when: manual
+  
+d:
+  stage: d
+  script: echo d
+  

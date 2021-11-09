@@ -21,11 +21,8 @@ build_B:
 test A:
   stage: test
   script: cat out/index.html
-  dependencies:
-    - build_A
 
 test B:
   stage: test
   script: cat out/index.html
-  dependencies:
-    - build_B
+  dependencies: []

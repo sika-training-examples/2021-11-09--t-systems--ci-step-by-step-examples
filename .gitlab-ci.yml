@@ -1,42 +1,11 @@
-# .gitlab-ci.yml
-
-stages:
-  - foo
-  - unit_test
-  - integration_test
-  - build
-  - deploy
-
-foo:
-  stage: foo
-  script: echo foo
+Build A:
+  script: echo Cuild A ...
   only:
-    - web
+    changes:
+      - a/**
 
-unit_test:
-  stage: unit_test
-  script: echo Unit Test ...
+Build B:
+  script: echo Cuild B ...
   only:
-    - branches
-    - merge_requests
-
-integration_test:
-  stage: integration_test
-  script: echo Integration Test ...
-  only:
-    - merge_requests
-
-build:
-  stage: build
-  script: echo Build ...
-  only:
-    - master
-    - tags
-
-deploy:
-  stage: deploy
-  script: echo Deploy ...
-  only:
-    - tags
-  when: manual
-  allow_failure: false
+    changes:
+      - b/**

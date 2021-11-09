@@ -9,7 +9,7 @@ stages:
 
 foo:
   stage: foo
-  scirpt: echo foo
+  script: echo foo
   only:
     - web
 

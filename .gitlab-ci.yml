@@ -1,12 +1,9 @@
 # .gitlab-ci.yml
 
 variables:
-  XXX_GLOBAL: global
+  XXX_IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+  XXX_IMAGE_2: $XXX_IMAGE-2
+
 
 job1:
-  script: env | grep XXX
-
-job2:
-  variables:
-    XXX_LOCAL: local
   script: env | grep XXX

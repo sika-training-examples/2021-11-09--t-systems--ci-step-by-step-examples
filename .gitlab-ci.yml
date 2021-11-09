@@ -1,11 +1,10 @@
 # .gitlab-ci.yml
 
-variables:
-  XXX_IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
-  XXX_IMAGE_2: $XXX_IMAGE-2
-
-
-job1:
-  variables:
-    XXX_LOCAL: local-$XXX_IMAGE
-  script: env | grep XXX
+job:
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - now
+  script:
+    - date >> now
+    - cat now

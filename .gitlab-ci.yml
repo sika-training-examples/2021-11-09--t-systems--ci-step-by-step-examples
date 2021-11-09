@@ -1,4 +1,6 @@
 # .gitlab-ci.yml
+image: sikalabs/ci
+
 test:
   image: golang
   script:

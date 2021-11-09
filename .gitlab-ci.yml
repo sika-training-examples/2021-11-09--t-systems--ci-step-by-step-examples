@@ -1,19 +1,10 @@
-# .gitlab-ci.yml
-
-before_script:
-  - echo Global before
-
-after_script:
-  - echo Global after
-
 job1:
-  script: echo Job1!
+  script:
+    - echo Job1! && false
+    - echo cleanup
 
 job2:
-  script: echo Job2! && false
-
-job3:
-  before_script:
-    - echo Local before
-  after_script: []
-  script: echo Job3!
+  script:
+    - echo Job2! && false
+  after_script:
+    - echo cleanup

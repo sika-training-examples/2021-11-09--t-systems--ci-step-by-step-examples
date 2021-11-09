@@ -1,7 +1,15 @@
 stages:
+  - env
   - build
   - test
   - deploy
+
+env:
+  stage: env
+  script:
+    - echo $SKIP_BRANCH
+    - echo $CI_COMMIT_REF
+    - env
 
 build:
   stage: build

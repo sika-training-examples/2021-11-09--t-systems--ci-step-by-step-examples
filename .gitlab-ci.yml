@@ -6,5 +6,6 @@ variables:
 
 
 job1:
-  XXX_LOCAL: local-$XXX_IMAGE
+  variables:
+    XXX_LOCAL: local-$XXX_IMAGE
   script: env | grep XXX

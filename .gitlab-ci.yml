@@ -1,10 +1,8 @@
 # .gitlab-ci.yml
 
 job:
-  cache:
-    key: ${CI_COMMIT_REF_SLUG}
-    paths:
-      - node_modules
   image: node
+  variable:
+    GIT_CLEAN_FLAGS: -ffdx -e .yarn-cache
   script:
-    - yarn
+    - yarn --cache-folder .yarn-cache

@@ -1,0 +1,10 @@
+{
+  "name": "ondrejsika-ci-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@gitlab.sikademo.com:t-sys/ondrejsika-ci-example.git",
+  "author": "Ondrej Sika <ondrej@ondrejsika.com>",
+  "license": "MIT",
+  "private": true
+}
+

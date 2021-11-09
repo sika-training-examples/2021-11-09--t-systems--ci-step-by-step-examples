@@ -2,7 +2,7 @@
 
 job:
   image: node
-  variable:
+  variables:
     GIT_CLEAN_FLAGS: -ffdx -e .yarn-cache
   script:
     - yarn --cache-folder .yarn-cache

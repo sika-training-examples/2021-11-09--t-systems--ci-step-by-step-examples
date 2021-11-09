@@ -1,0 +1,6 @@
+
+# .gitlab-ci-deploy.yml
+
+deploy:
+  stage: deploy
+  script: echo deploy

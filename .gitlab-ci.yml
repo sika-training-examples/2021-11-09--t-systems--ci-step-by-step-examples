@@ -1,8 +1,9 @@
 # .gitlab-ci.yml
 test:
-  image: ondrejsika/pytest
+  image: golang
   script:
-    - pytest --junitxml=report.xml
+    - go build hello.go
+    - ./hello
   artifacts:
-    reports:
-      junit: report.xml
+    paths:
+      - hello

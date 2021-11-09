@@ -5,6 +5,11 @@
   "repository": "git@gitlab.sikademo.com:t-sys/ondrejsika-ci-example.git",
   "author": "Ondrej Sika <ondrej@ondrejsika.com>",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.3.3"
+  }
 }
-

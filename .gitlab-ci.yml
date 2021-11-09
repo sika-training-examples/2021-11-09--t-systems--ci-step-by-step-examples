@@ -1,15 +1,20 @@
 # .gitlab-ci.yml
-pipeline_a:
-  trigger:
-    include: a/.gitlab-ci.yml
-    strategy: depend
-  only:
-    changes:
-      - a/**
+stages:
+  - generate
+  - pipeline
 
-pipeline_b:
+generate:
+  stage: generate
+  image: python:3.7-slim
+  script: python generate-gitlab-ci.py
+  artifacts:
+    paths:
+      - .gitlab-ci.generated.yml
+
+pipeline:
+  stage: pipeline
   trigger:
-    include: b/.gitlab-ci.yml
-  only:
-    changes:
-      - b/**
+    include:
+      - artifact: .gitlab-ci.generated.yml
+        job: generate
+    strategy: depend

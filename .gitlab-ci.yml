@@ -1,10 +1,16 @@
 # .gitlab-ci.yml
 
 stages:
+  - foo
   - unit_test
   - integration_test
   - build
   - deploy
+
+foo:
+  stage: foo
+  only:
+    - web
 
 unit_test:
   stage: unit_test

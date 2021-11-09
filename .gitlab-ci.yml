@@ -7,18 +7,20 @@ stages:
 a:
   stage: a
   script: echo a
-  when: manual
+  # when: manual
+  allow_failure: true
 
 b:
   stage: b
-  script: echo b
-  when: manual
+  script: echo b && sleep 20 && false
+  # when: manual
+  allow_failure: true
   
 c:
   stage: c
   script: echo c
-  when: manual
-  
+  # when: manual
+  allow_failure: true
 d:
   stage: d
   script: echo d

@@ -7,7 +7,7 @@ stages:
 
 triger-pipelines:
   stage: trigger
-  trigger: ondrejsika/foo
+  trigger: t-sys/hello
 
 
 generate:

@@ -1,2 +1,2 @@
 env:
-  script: echo https://$CI_PROJECT_PATH_SLUG-$CI_COMMIT_REF_SLUG.dev.company.com
+  script: env | xxx

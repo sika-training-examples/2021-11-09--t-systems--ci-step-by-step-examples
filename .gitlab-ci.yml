@@ -7,14 +7,14 @@ stages:
 a:
   stage: a
   script: echo a
-  # when: manual
-  allow_failure: true
+  when: manual
+  # allow_failure: true
 
 b:
   stage: b
   script: echo b && sleep 20 && false
-  # when: manual
-  allow_failure: true
+  when: manual
+  # allow_failure: true
   
 c:
   stage: c

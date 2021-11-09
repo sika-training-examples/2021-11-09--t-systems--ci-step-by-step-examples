@@ -9,6 +9,7 @@ stages:
 
 foo:
   stage: foo
+  scirpt: echo foo
   only:
     - web
 

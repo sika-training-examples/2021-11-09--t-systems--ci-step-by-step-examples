@@ -17,7 +17,7 @@ build:
   except:
     variables:
       - $SKIP_STAGE_build == "1"
-      - $SKIP_BRANCH == $CI_COMMIT_REF
+      - $SKIP_BRANCH == $CI_COMMIT_REF_NAME
 
 test:
   stage: test
@@ -25,7 +25,7 @@ test:
   except:
     variables:
       - $SKIP_STAGE_test == "1"
-      - $SKIP_BRANCH == $CI_COMMIT_REF
+      - $SKIP_BRANCH == $CI_COMMIT_REF_NAME
 
 deploy:
   stage: deploy
@@ -33,4 +33,4 @@ deploy:
   except:
     variables:
       - $SKIP_STAGE_deploy == "1"
-      - $SKIP_BRANCH == $CI_COMMIT_REF
+      - $SKIP_BRANCH == $CI_COMMIT_REF_NAME

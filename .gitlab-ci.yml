@@ -2,6 +2,7 @@
 stages:
   - generate
   - pipeline
+  - pipeline2
 
 generate:
   stage: generate
@@ -29,6 +30,15 @@ generate2:
 
 pipeline2:
   stage: pipeline
+  trigger:
+    include:
+      - artifact: .gitlab-ci.generated.yml
+        job: generate2
+    strategy: depend
+
+
+pipeline3:
+  stage: pipeline2
   trigger:
     include:
       - artifact: .gitlab-ci.generated.yml

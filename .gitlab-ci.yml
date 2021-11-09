@@ -1,9 +1,20 @@
 # .gitlab-ci.yml
 
 stages:
+  - a
+  - b
   - build
   - test
   - deploy
+
+a:
+  stage: a
+  script: sleep 40
+
+
+b:
+  stage: b
+  script: sleep 40
 
 linux build:
   stage: build
@@ -48,10 +59,13 @@ release linux:
   needs:
     - linux unit tests
     - linux e2e tests
+    - a
+    - b
 
 release mac:
   stage: deploy
   script: "echo Done"
   needs:
     - mac unit tests
+    - b
     - mac e2e tests

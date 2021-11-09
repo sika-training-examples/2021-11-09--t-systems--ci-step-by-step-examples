@@ -2,7 +2,7 @@
 # generate-gitlab-ci.py
 import json
 
-SERVICES = [ "svc%d" % i for i in range(50)]
+SERVICES = [ "svc%d" % i for i in range(2)]
 def make_service(name):
     return {
         "build-%s" % name: {

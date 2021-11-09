@@ -1,8 +1,17 @@
+# .gitlab-ci.yml
 
-job1:
-  script: echo Hello World
-  
-job2:
-  script:
-    - echo Hello World! && false
-    - echo Ahoj Svete!
+stages:
+  - build
+  - test
+
+build:
+  stage: build
+  script: echo Build!
+
+test1:
+  stage: test
+  script: echo Test1!
+
+test2:
+  stage: test
+  script: echo Test2!

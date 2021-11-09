@@ -1,27 +1,36 @@
+# .gitlab-ci.yml
+
 stages:
-  - a
-  - b
-  - c
-  - d
+  - unit_test
+  - integration_test
+  - build
+  - deploy
 
-a:
-  stage: a
-  script: echo a
+unit_test:
+  stage: unit_test
+  script: echo Unit Test ...
+  only:
+    - branches
+    - tags
+    - merge_requests
+
+integration_test:
+  stage: integration_test
+  script: echo Integration Test ...
+  only:
+    - merge_requests
+
+build:
+  stage: build
+  script: echo Build ...
+  only:
+    - master
+    - tags
+
+deploy:
+  stage: deploy
+  script: echo Deploy ...
+  only:
+    - tags
   when: manual
   allow_failure: false
-
-b:
-  stage: b
-  script: echo b && sleep 20 && false
-  when: manual
-  allow_failure: true
-  
-c:
-  stage: c
-  script: echo c
-  # when: manual
-  allow_failure: false
-d:
-  stage: d
-  script: echo d
-  

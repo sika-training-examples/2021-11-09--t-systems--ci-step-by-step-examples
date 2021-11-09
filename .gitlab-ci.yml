@@ -1,8 +1,14 @@
 # .gitlab-ci.yml
 stages:
+  - trigger
   - generate
   - pipeline
   - pipeline2
+
+triger-pipelines:
+  stage: trigger
+  trigger: ondrejsika/foo
+
 
 generate:
   stage: generate

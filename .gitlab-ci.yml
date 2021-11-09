@@ -1,8 +1,19 @@
 # .gitlab-ci.yml
 
-job:
-  image: node
-  variables:
-    GIT_CLEAN_FLAGS: -ffdx -e .yarn-cache
+stages:
+  - build
+  - test
+
+build:
+  stage: build
   script:
-    - yarn --cache-folder .yarn-cache
+    - mkdir -p out
+    - echo '<h1>Hello World!</h1>' > out/index.html
+  artifacts:
+    paths:
+      - out
+
+test:
+  stage: test
+  script:
+    - cat out/index.html
